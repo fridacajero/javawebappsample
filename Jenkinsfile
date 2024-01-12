@@ -20,7 +20,7 @@ node {
   
     stage('deploy') {
       def resourceGroup = 'RG-AzureChallenge'
-      def webAppName = 'PipelinesTest'
+      def webAppName = 'pipelinestest'
       // login Azure
       withCredentials([usernamePassword(credentialsId: '074919e9-26dd-4758-93c9-2f3e3b2b18fb', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
