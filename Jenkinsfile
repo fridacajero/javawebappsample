@@ -22,7 +22,7 @@ node {
       def resourceGroup = 'RG-AzureChallenge'
       def webAppName = 'PipelinesTest'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '8949e385-02e1-447b-8070-0191a3360ac0', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      withCredentials([usernamePassword(credentialsId: '074919e9-26dd-4758-93c9-2f3e3b2b18fb', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
