@@ -22,10 +22,10 @@ node {
       def resourceGroup = 'RG-AzureChallenge'
       def webAppName = 'PipelinesTest'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<service_princial>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      withCredentials([usernamePassword(credentialsId: '8949e385-02e1-447b-8070-0191a3360ac0', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
-          az login --service-principal -u $8949e385-02e1-447b-8070-0191a3360ac0 -p $CsI8Q~Ov1BM2~XOxSAqMJoYKh7K0s54VJGSCace1 -t $511ce6e0-0e57-4c9f-acd1-4154a6b4c914
-          az account set -s $90e29109-e9c2-4b40-88a6-7fe6f3593db9
+          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az account set -s $AZURE_SUBSCRIPTION_ID
         '''
       }
       // get publish settings
